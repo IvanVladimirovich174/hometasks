@@ -16,6 +16,7 @@ public class Task10 {
 
         boolean isEqual = false;
         int n;
+
         do {
             n = scanner.nextInt();
             if (n < 0) {
@@ -32,4 +33,3 @@ public class Task10 {
         } while (!isEqual);
     }
 }
-

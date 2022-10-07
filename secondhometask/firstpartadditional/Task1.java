@@ -7,30 +7,34 @@ public class Task1 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+
         int n;
-        do {
+
+        while (true) {
             n = scanner.nextInt();
             if (n < 8) {
                 System.out.println("Пароль с " + n + " количеством символов небезопасен");
+            } else {
+                break;
             }
-        } while (n < 8);
+        }
 
         final char[] SPECIAL_CHARS = {'*', '-', '_'};
         char[] pass = new char[n];
         SecureRandom sr = new SecureRandom();
 
         // fill pass with must have chars
-        pass[0] = (char) sr.nextInt('a', 'z' + 1);
-        pass[1] = (char) sr.nextInt('A', 'Z' + 1);
-        pass[2] = (char) sr.nextInt('0', '9' + 1);
+        pass[0] = secureRandomChar(sr, 'a', 'z' + 1);
+        pass[1] = secureRandomChar(sr, 'A', 'Z' + 1);
+        pass[2] = secureRandomChar(sr, '0', '9' + 1);
         pass[3] = SPECIAL_CHARS[sr.nextInt(SPECIAL_CHARS.length)];
 
         // fill rest with random chars
         for (int i = 4; i < n; i++) {
             char[] charVariants = {
-                    (char) sr.nextInt('a', 'z' + 1),
-                    (char) sr.nextInt('A', 'Z' + 1),
-                    (char) sr.nextInt('0', '9' + 1),
+                    secureRandomChar(sr, 'a', 'z' + 1),
+                    secureRandomChar(sr, 'A', 'Z' + 1),
+                    secureRandomChar(sr, '0', '9' + 1),
                     SPECIAL_CHARS[sr.nextInt(SPECIAL_CHARS.length)]
             };
             pass[i] = charVariants[sr.nextInt(charVariants.length)];
@@ -48,11 +52,9 @@ public class Task1 {
         for (char c : pass) {
             System.out.print(c);
         }
+    }
 
-        // clear password array
-        for (int i = 0; i < n; i++) {
-            pass[i] = 0;
-        }
-        pass = null;
+    public static char secureRandomChar(SecureRandom sr, int origin, int bound) {
+        return (char) (sr.nextInt(bound - origin) + origin);
     }
 }
