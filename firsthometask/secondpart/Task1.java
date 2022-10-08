@@ -6,7 +6,9 @@ public class Task1 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+
         int[] grade = new int[3];
+
         for (int i = 0; i < grade.length; i++) {
             grade[i] = scanner.nextInt();
         }
@@ -17,6 +19,7 @@ public class Task1 {
                 isDecreasing = false;
             }
         }
+
         System.out.println(isDecreasing ? "Петя, пора трудиться" : "Петя молодец!");
     }
 }

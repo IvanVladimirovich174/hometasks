@@ -9,6 +9,7 @@ public class Task3 {
         int hour = scanner.nextInt();
 
         String message = (hour > 12) ? "Пора" : "Рано";
+
         System.out.println(message);
     }
 }

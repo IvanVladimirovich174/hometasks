@@ -21,7 +21,9 @@ public class Task10 {
         for (int i = 1; i <= n; i++) {
             if (i != n) {
                 System.out.print(" ");
-            } else System.out.println("|");
+            } else {
+                System.out.println("|");
+            }
         }
     }
 }

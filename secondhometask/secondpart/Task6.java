@@ -15,6 +15,7 @@ public class Task6 {
 
         String[] s = new String[7];
         String[][] sParse = new String[7][4];
+
         for (int i = 0; i < 7; i++) {
             s[i] = scanner.nextLine();
             sParse[i] = s[i].split(" ");
@@ -43,6 +44,8 @@ public class Task6 {
 
         if ((a >= sumA) && (b >= sumB) && (c >= sumC) && (k >= sumK)) {
             System.out.println("Отлично");
-        } else System.out.println("Нужно есть поменьше");
+        } else {
+            System.out.println("Нужно есть поменьше");
+        }
     }
 }

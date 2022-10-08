@@ -8,14 +8,18 @@ public class Task10 {
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
+
         printDigitsReverse(n);
     }
 
     public static int printDigitsReverse(int n) {
+
         if (n == 0) {
             return n;
         }
+
         System.out.print(n % 10 + " ");
+
         return printDigitsReverse(n / 10);
     }
 }

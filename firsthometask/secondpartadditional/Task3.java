@@ -14,6 +14,8 @@ public class Task3 {
 
         if((brand.contains("samsung") || brand.contains("iphone")) && (price >=50000 && price <= 120000)) {
             System.out.println("Можно купить");
-        } else System.out.println("Не подходит");
+        } else {
+            System.out.println("Не подходит");
+        }
     }
 }

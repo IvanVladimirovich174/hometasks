@@ -12,6 +12,7 @@ public class Task5 {
         while (m >= n) {
             m = m - n;
         }
+
         System.out.println(m);
     }
 }

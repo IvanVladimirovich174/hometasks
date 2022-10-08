@@ -10,9 +10,11 @@ public class Task2 {
         int n = scanner.nextInt();
 
         int sum = 0;
+
         for (int i = m; i <= n; i++) {
             sum += i;
         }
+
         System.out.println(sum);
     }
 }

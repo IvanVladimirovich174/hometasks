@@ -6,12 +6,14 @@ public class Task5 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
         int n = scanner.nextInt();
+
         int[] a = new int[n];
+
         for (int i = 0; i < n; i++) {
             a[i] = scanner.nextInt();
         }
+
         int m = scanner.nextInt();
 
         for (int j = 0; j < m; j++) {
@@ -22,7 +24,7 @@ public class Task5 {
             a[0] = temp;
         }
 
-        for (int num: a) {
+        for (int num : a) {
             System.out.print(num + " ");
         }
     }

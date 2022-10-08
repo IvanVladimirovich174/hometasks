@@ -7,12 +7,16 @@ public class Task9 {
 
         Scanner scanner = new Scanner(System.in);
         int count = 0;
+
         do {
             int a = scanner.nextInt();
             if (a < 0) {
                 count++;
-            } else break;
+            } else {
+                break;
+            }
         } while (true);
+
         System.out.println(count);
     }
 }

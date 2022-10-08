@@ -9,6 +9,7 @@ public class Task8 {
         String initialString = scanner.nextLine();
 
         int indexSpace = initialString.lastIndexOf(" ");
+
         String firstStringPart = initialString.substring(0, indexSpace);
         String secondStringPart = initialString.substring(indexSpace + 1);
 

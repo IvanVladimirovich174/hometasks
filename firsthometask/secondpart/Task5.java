@@ -13,7 +13,7 @@ public class Task5 {
         int discriminant = b * b - 4 * a * c;
 
         String message = (discriminant < 0) ? "Решения нет" : "Решение есть";
-        System.out.println(message);
 
+        System.out.println(message);
     }
 }

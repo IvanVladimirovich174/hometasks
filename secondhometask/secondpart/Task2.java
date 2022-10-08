@@ -6,7 +6,6 @@ public class Task2 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
         int n = scanner.nextInt();
         int x1 = scanner.nextInt();
         int y1 = scanner.nextInt();
@@ -14,6 +13,7 @@ public class Task2 {
         int y2 = scanner.nextInt();
 
         int[][] matrix = new int[n][n];
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if ((j >= x1) && (j <= x2) && ((i == y1) || (i == y2))) {

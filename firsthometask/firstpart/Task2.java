@@ -10,6 +10,7 @@ public class Task2 {
         int b = scanner.nextInt();
 
         double rms = Math.sqrt((a * a + b * b) / 2.0);
+
         System.out.println(rms);
     }
 }

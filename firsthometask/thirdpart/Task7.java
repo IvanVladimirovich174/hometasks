@@ -10,11 +10,13 @@ public class Task7 {
 
         int count = 0;
         char space = ' ';
+
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) != space) {
                 count++;
             }
         }
+
         System.out.println(count);
     }
 }

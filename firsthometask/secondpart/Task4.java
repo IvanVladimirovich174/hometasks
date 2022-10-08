@@ -10,6 +10,8 @@ public class Task4 {
 
         if (dayNumber == 6 || dayNumber == 7) {
             System.out.println("Ура, выходные!");
-        } else System.out.println(6 - dayNumber);
+        } else {
+            System.out.println(6 - dayNumber);
+        }
     }
 }

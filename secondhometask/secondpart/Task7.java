@@ -13,6 +13,7 @@ public class Task7 {
         scanner.nextLine();
 
         String[] name = new String[n];
+
         for (int i = 0; i < n; i++) {
             name[i] = scanner.nextLine();
         }
@@ -57,6 +58,7 @@ public class Task7 {
                 }
             }
         }
+
         //print result
         for (int i = n - 1; i > n - 4; i--) {
             System.out.print(name[i] + ": " + nickName[i] + ", " + BigDecimal.valueOf(average[i]).setScale(1, RoundingMode.DOWN));

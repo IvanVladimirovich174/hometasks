@@ -9,6 +9,7 @@ public class Task10 {
         double n = scanner.nextDouble();
 
         final double EPSILON = 1E-14;
+
         boolean isTrue = Math.abs(Math.log(Math.exp(n)) - n) < EPSILON;
 
         System.out.println(isTrue);
