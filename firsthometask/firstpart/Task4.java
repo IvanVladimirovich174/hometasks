@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Task4 {
     public static void main(String[] args) {
-
         final int SECONDS_PER_MINUTE = 60;
         final int MINUTES_PER_HOUR = 60;
 

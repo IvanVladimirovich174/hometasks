@@ -9,7 +9,6 @@ public class Task10 {
     }
 
     public static void game() {
-
         int m = ThreadLocalRandom.current().nextInt(0, 1001);
 
         Scanner scanner = new Scanner(System.in);

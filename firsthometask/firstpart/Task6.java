@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Task6 {
     public static void main(String[] args) {
-
         final double MILES_PER_KILOMETERS = 1.60934;
 
         Scanner scanner = new Scanner(System.in);
