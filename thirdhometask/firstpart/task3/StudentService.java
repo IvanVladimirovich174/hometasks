@@ -19,7 +19,11 @@ public class StudentService {
         return bestStudent;
     }
 
-    public void sortBySurname(Student[] students) {
-        Arrays.sort(students);
+    public Student[] sortBySurname(Student[] students) {
+        Student[] sortedArray = new Student[students.length];
+
+        System.arraycopy(students,0,sortedArray,0,students.length);
+        Arrays.sort(sortedArray);
+        return sortedArray;
     }
 }

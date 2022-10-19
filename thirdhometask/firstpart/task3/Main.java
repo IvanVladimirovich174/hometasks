@@ -31,16 +31,23 @@ public class Main {
         System.out.println(studentService.bestStudent(students));
         System.out.println();
 
-        System.out.println("Before sort:");
+        System.out.println("Initial array before sort:");
         for (Student student : students) {
             System.out.println(student);
         }
         System.out.println();
 
-        System.out.println("After sort:");
-        studentService.sortBySurname(students);
+        System.out.println("New array after sort:");
+        Student[] studentsAfterSort = studentService.sortBySurname(students);
+        for (Student student : studentsAfterSort) {
+            System.out.println(student);
+        }
+        System.out.println();
+
+        System.out.println("Initial array after sort :");
         for (Student student : students) {
             System.out.println(student);
         }
+        System.out.println();
     }
 }

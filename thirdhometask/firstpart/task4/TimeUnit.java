@@ -42,11 +42,11 @@ public class TimeUnit {
         this(hours, 0, 0);
     }
 
-    public void printTime12() {
+    public void printTime24() {
         System.out.printf("%02d:%02d:%02d\n", hours, minutes, seconds);
     }
 
-    public void printTime24() {
+    public void printTime12() {
         if (hours == 0) {
             System.out.printf("%02d:%02d:%02d am\n", 12, minutes, seconds);
         } else if (hours == 12) {
