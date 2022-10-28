@@ -2,16 +2,16 @@ package thirdhometask.thirdpart.task4;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class ThreeWinners {
-    public static ArrayList<Participant> findThreeWinners(ArrayList<Participant> participants) {
-        Collections.sort(participants);
+    public static List<Participant> getThreeWinners(ArrayList<Participant> participants) {
+        participants.sort(Collections.reverseOrder());
 
-        ArrayList<Participant> threeWinners = new ArrayList<>();
-
-        for (int i = 1; i <= 3; i++) {
-            threeWinners.add(participants.get(participants.size() - i));
+        if (participants.size() > 3) {
+            return participants.subList(0, 3);
+        } else {
+            return participants;
         }
-        return threeWinners;
     }
 }

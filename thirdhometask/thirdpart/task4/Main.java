@@ -1,6 +1,7 @@
 package thirdhometask.thirdpart.task4;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -27,7 +28,7 @@ public class Main {
             scanner.nextLine();
         }
 
-        ArrayList<Participant> threeWinners = ThreeWinners.findThreeWinners(participants);
+        List<Participant> threeWinners = ThreeWinners.getThreeWinners(participants);
         for (Participant winner : threeWinners) {
             System.out.println(winner);
         }
