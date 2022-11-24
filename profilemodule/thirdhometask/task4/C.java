@@ -1,4 +1,4 @@
 package profilemodule.thirdhometask.task4;
 
-public interface C {
+public interface C extends E {
 }

@@ -1,13 +1,13 @@
 package profilemodule.thirdhometask.task4;
 
-import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        List<Class<?>> allInterfaces = GetAllInterfaces.getAllInterfaces(B.class);
+        Set<Class<?>> allInterfaces = GetAllInterfaces.getAllInterfaces(B.class);
 
-        for (Class<?> someInterface : allInterfaces) {
-            System.out.println(someInterface.getSimpleName());
+        for (Class<?> anInterface : allInterfaces) {
+            System.out.println(anInterface.getSimpleName());
         }
     }
 }

@@ -1,19 +1,26 @@
 package profilemodule.thirdhometask.task4;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class GetAllInterfaces {
-    public static List<Class<?>> getAllInterfaces(Class<?> cls) {
+    public static Set<Class<?>> getAllInterfaces(Class<?> cls) {
 
-        List<Class<?>> listOfInterfaces = new ArrayList<>();
+        Set<Class<?>> result = new LinkedHashSet<>();
 
         while (!cls.equals(Object.class)) {
-            listOfInterfaces.addAll(Arrays.asList(cls.getInterfaces()));
+            addInterfacesToResult(cls.getInterfaces(), result);
             cls = cls.getSuperclass();
         }
 
-        return listOfInterfaces;
+        return result;
+    }
+
+    private static void addInterfacesToResult(Class<?>[] interfaces, Set<Class<?>> result) {
+        if (interfaces.length != 0) {
+            for (Class<?> anInterface : interfaces) {
+                result.add(anInterface);
+                addInterfacesToResult(anInterface.getInterfaces(), result);
+            }
+        }
     }
 }
