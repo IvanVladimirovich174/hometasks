@@ -5,7 +5,6 @@ import java.util.List;
 public class Multiplication {
     public static int getMultiplicationOfListValues(List<Integer> list) {
         return list.stream()
-                .reduce((firstNumber, secondNumber) -> firstNumber * secondNumber)
-                .orElse(0);
+                .reduce(1,(firstNumber, secondNumber) -> firstNumber * secondNumber);
     }
 }
