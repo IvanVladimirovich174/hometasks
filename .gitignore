@@ -32,3 +32,11 @@ out/
 *.iml
 *.ipr
 *.iws
+
+profilemodule/sixthhometask/.idea
+profilemodule/sixthhometask/.mvn/
+profilemodule/sixthhometask/target
+profilemodule/sixthhometask/HELP.md
+profilemodule/sixthhometask/mvnw
+profilemodule/sixthhometask/mvnw.cmd
+profilemodule/sixthhometask/sixthhometask.iml
