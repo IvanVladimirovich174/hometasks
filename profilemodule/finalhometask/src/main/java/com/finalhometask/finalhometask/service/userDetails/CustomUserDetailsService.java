@@ -17,27 +17,27 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
-  private final UserRepository userRepository;
-  @Value("${spring.security.user.name}")
-  private String adminUserName;
-  @Value("${spring.security.user.password}")
-  private String adminPassword;
-  @Value("${spring.security.user.roles}")
-  private String adminRole;
+    private final UserRepository userRepository;
+    @Value("${spring.security.user.name}")
+    private String adminUserName;
+    @Value("${spring.security.user.password}")
+    private String adminPassword;
+    @Value("${spring.security.user.roles}")
+    private String adminRole;
 
-  public CustomUserDetailsService(UserRepository userRepository) {
-    this.userRepository = userRepository;
-  }
-
-  @Override
-  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    if (username.equals(adminUserName)) {
-      return new CustomUserDetails(null, username, adminPassword, List.of(new SimpleGrantedAuthority("ROLE_ADMIN")));
-    } else {
-      User user = userRepository.findUserByLoginAndDeletedFalse(username);
-      List<GrantedAuthority> authorities = new ArrayList<>();
-      authorities.add(new SimpleGrantedAuthority(user.getRole().getId() == 1L ? "ROLE_USER" : "VIEWER"));
-      return new CustomUserDetails(user.getId().intValue(), username, user.getPassword(), authorities);
+    public CustomUserDetailsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
-  }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        if (username.equals(adminUserName)) {
+            return new CustomUserDetails(null, username, adminPassword, List.of(new SimpleGrantedAuthority("ROLE_ADMIN")));
+        } else {
+            User user = userRepository.findUserByLoginAndDeletedFalse(username);
+            List<GrantedAuthority> authorities = new ArrayList<>();
+            authorities.add(new SimpleGrantedAuthority(user.getRole().getId() == 1L ? "ROLE_USER" : "VIEWER"));
+            return new CustomUserDetails(user.getId().intValue(), username, user.getPassword(), authorities);
+        }
+    }
 }

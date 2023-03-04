@@ -1,9 +1,6 @@
 package com.finalhometask.finalhometask.security;
 
 import com.finalhometask.finalhometask.service.userDetails.CustomUserDetailsService;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,12 +15,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
-@RequiredArgsConstructor
 public class JwtTokenFilter extends OncePerRequestFilter {
-    @Getter
-    private String token;
     private final CustomUserDetailsService customUserDetailsService;
     private final JwtTokenUtil jwtTokenUtil;
+
+    public JwtTokenFilter(CustomUserDetailsService customUserDetailsService, JwtTokenUtil jwtTokenUtil) {
+        this.customUserDetailsService = customUserDetailsService;
+        this.jwtTokenUtil = jwtTokenUtil;
+    }
 
     @Override
     protected void doFilterInternal(
@@ -31,7 +30,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             HttpServletResponse response,
             FilterChain filterChain
     ) throws ServletException, IOException {
-        token = null;
+        String token = null;
         String header = request.getHeader(HttpHeaders.AUTHORIZATION);
 
         if ((header == null) || !header.startsWith("Bearer ")) {
@@ -54,6 +53,6 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                         userDetails, null, userDetails.getAuthorities());
 
         SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-        filterChain.doFilter(request,response);
+        filterChain.doFilter(request, response);
     }
 }
